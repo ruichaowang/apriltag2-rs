@@ -1,0 +1,17 @@
+[package]
+name = "apriltag2-rs"
+version = "0.1.0"
+edition = "2021"
+license = "LGPL-2.1-only"
+description = "Pure Rust port of the legacy AprilTags/AprilTag2 detector"
+readme = "README.md"
+documentation = "https://docs.rs/apriltag2-rs"
+repository = "https://github.com/ruichaowang/apriltag2-rs"
+keywords = ["apriltag", "fiducial", "computer-vision", "robotics"]
+categories = ["computer-vision", "algorithms"]
+exclude = [
+    "/target",
+    "/.github",
+]
+
+[dependencies]

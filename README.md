@@ -47,3 +47,25 @@ This repository is intended to stay independent from the calibration project it
 was extracted from. Keep camera calibration, OpenCV image loading, and dataset
 comparison tooling outside the core crate unless they are added as optional
 examples or dev-only tools.
+
+## Testing
+
+Integration tests use real Tag36h11 images from the official
+[AprilRobotics/apriltag-imgs](https://github.com/AprilRobotics/apriltag-imgs)
+repository. The `tests/test-images/` directory contains all 587 Tag36h11 reference
+PNGs plus a mosaic image, sourced from the `tag36h11/` subdirectory of that repo.
+
+Run tests:
+
+```bash
+cargo test              # all tests (~19s)
+cargo test --test tag36h11_detection -- detect_empty  # single test
+```
+
+### Test coverage
+
+- **`detect_all_tag36h11_individual_tags`** — verifies every Tag36h11 reference image
+  is correctly detected with the expected tag ID (587 images).
+- **`detect_mosaic_all_tags`** — verifies the mosaic image produces valid detections
+  within the Tag36h11 ID range.
+- **`detect_empty_image_returns_nothing`** — verifies an empty image produces no false positives.

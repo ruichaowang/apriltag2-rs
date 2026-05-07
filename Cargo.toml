@@ -15,3 +15,6 @@ exclude = [
 ]
 
 [dependencies]
+
+[dev-dependencies]
+image = "0.25"

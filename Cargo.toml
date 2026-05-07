@@ -12,6 +12,7 @@ categories = ["computer-vision", "algorithms"]
 exclude = [
     "/target",
     "/.github",
+    "/tests/test-images",
 ]
 
 [dependencies]
